@@ -1,0 +1,287 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* -------------------- */
+
+:root {
+    --orange: #ce973e;
+    --white: #fff;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f3f4f6;
+    --dark: #343a40;
+    font-family: 'Roboto', sans-serif;
+    color: var(--dark);
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 1fr;
+    height: 100vh;
+}
+
+.sidebar {
+    grid-row: 1 / -1;
+    background-color: var(--white);
+    padding: 15px;
+    border-right: 1px solid var(--secondary);
+}
+
+.sidebar .logo {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.side-content {
+    font-size: 1.2rem;
+    color: var(--dark);
+    cursor: pointer;
+    height: 60px;
+}
+
+.side-content:hover {
+    color: #121416;
+    background-color: var(--light);
+}
+
+.side-content:active {
+    background-color: #ebebeb;
+}
+
+.side-content img,
+header img {
+    height: 30px;
+    padding: 0 15px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    padding: 20px 65px 20px 20px;
+}
+
+.header p {
+    font-weight: bold;
+}
+
+.header1 {
+    justify-content: space-between;
+}
+
+.header1,
+.header1 div,
+.header2,
+.header2>div:nth-of-type(1),
+.side-content,
+.trending > div > div  {
+    display: flex;
+    align-items: center;
+}
+
+.header1 div img:nth-of-type(1) {
+    cursor: pointer;
+}
+
+.header1 div img:nth-of-type(2) {
+    height: 50px;
+    border-radius: 50%;
+}
+
+.header1 p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header1 div:nth-of-type(1){
+    flex: 1;
+}
+
+#query {
+    flex: 1;
+    height: 30px;
+    border: none;
+    outline-color: var(--secondary);
+    text-indent: 25px;
+    border-radius: 15px;
+    background-color: var(--light);
+    margin-right: 100px;
+}
+
+.header2 {
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.header2 div img {
+    height: 90px;
+    border-radius: 50%;
+}
+
+.header2 p:nth-of-type(2) {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header2 div:nth-of-type(2) {
+    display: flex;
+    gap: 20px;
+}
+
+.header2 button {
+    font-size: 20px;
+    font-weight: bold;
+    height: 50px;
+    width: 85px;
+    border: none;
+    background-color: #0f766e;
+    border-radius: 0.375rem;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.header2 button:active {
+    background-color: #0b4e49;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 30px;
+    background-color: var(--light);
+}
+
+.main, .projects {
+    gap: 20px;
+}
+
+.projects > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    border-left: 8px solid var(--warning);
+    box-shadow: 0 15px 25px -25px var(--dark);
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project div {
+    display: flex;
+    justify-content: flex-end;
+    height: 35px;
+    margin-top: 20px;
+}
+
+.project div img {
+    cursor: pointer;
+}
+
+.project h1 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.project p {
+    line-height: 25px;
+}
+
+.projects h1, .project h1, .announcements > h1, .trending > h1 {
+    margin-bottom: 15px;
+}
+
+.projects > h1, .announcements > h1, .trending > h1 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.announcements div, .trending > div {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 15px 25px -25px var(--dark);
+    padding: 25px;
+}
+
+.announcements div {
+    margin-bottom: 30px;
+}
+
+.announcements div hr {
+    margin: 20px 0;
+}
+
+.announcements div h1{
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.trending img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.trending > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
